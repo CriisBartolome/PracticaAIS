@@ -3,6 +3,7 @@ package agendaTelefonica;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
  
@@ -16,6 +17,22 @@ public class Ejercicio {
     
     
     public static void main(String[] args) {
+        
+        String ruta= "C:\\Users\\cristina\\Documents\\NetBeansProjects\\PracticaAIS\\agenda.dat";
+        File fichero= new File(ruta);
+        if (fichero.exists()){
+            System.out.println("El fichero ya existe");
+        }
+        else{
+            try{
+                fichero.createNewFile();
+                System.out.println("Fichero creado con éxito");
+            }
+            catch(IOException ioe){
+                System.out.println("El fichero no se ha podido crear");
+            }
+        }
+        
         try {
             BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
             String texto="";
