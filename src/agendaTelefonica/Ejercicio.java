@@ -18,8 +18,8 @@ public class Ejercicio {
     
     public static void main(String[] args) {
         
-        String ruta= "C:\\Users\\cristina\\Documents\\NetBeansProjects\\PracticaAIS\\agenda.dat";
-        File fichero= new File(ruta);
+        
+        File fichero= new File("agenda.dat");
         if (fichero.exists()){
             System.out.println("El fichero ya existe");
         }
